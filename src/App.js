@@ -2,6 +2,7 @@ import React from "react";
 // PAGES
 import Nav from "./components/Nav";
 import ChampionsPage from "./pages/ChampionsPage";
+import ChampionDetail from "./pages/ChampionDetail";
 import GlobalStyles from "./components/GlobalStyles";
 import ItemsPage from "./pages/ItemsPage";
 // ROUTE
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <ChampionsPage />
+        </Route>
+        <Route path="/champion/:id">
+          <ChampionDetail />
         </Route>
         <Route path="/items">
           <ItemsPage />

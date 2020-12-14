@@ -11,6 +11,9 @@ import Champion from "../components/Champion";
 function ChampionsPage() {
   const dispatch = useDispatch();
   useEffect(() => {
+    // Scroll to top
+    window.scrollTo(0, 0);
+
     dispatch(loadChampions());
   }, [dispatch]);
 
@@ -19,7 +22,7 @@ function ChampionsPage() {
 
   return (
     <StyledHome>
-      <h2>Tướng</h2>
+      <h1>Tướng</h1>
       <ChampionList>
         {champions.map((champion) => (
           <Champion name={champion.name} id={champion.id} key={champion.id} />

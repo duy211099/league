@@ -1,6 +1,10 @@
 const initState = {
   champions: [],
-  currentChampion: {},
+  currentChampion: {
+    allytips: [],
+    enemytips: [],
+    info: [],
+  },
 };
 
 // Turn obj to array
@@ -9,7 +13,6 @@ const toArray = (data) => {
   for (var i in data) {
     formattedData.push(data[i]);
   }
-  console.log(formattedData);
   return formattedData;
 };
 
@@ -19,6 +22,11 @@ const championReducer = (state = initState, action) => {
       return {
         ...state,
         champions: toArray(action.payload.champions.data.data),
+      };
+    case "GET_CHAMPION":
+      return {
+        ...state,
+        currentChampion: action.payload.currentChampion,
       };
     default:
       return { ...state };

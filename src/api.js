@@ -7,3 +7,6 @@ const ddragon_url = `https://ddragon.leagueoflegends.com/cdn/${version}/data/${l
 const champions = `champion.json`;
 
 export const championsURL = () => `${ddragon_url}${champions}`;
+
+export const championURL = (champion) =>
+  `${ddragon_url}champion/${champion}.json`;

@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <StyledDiv>
-      <h1>
+    <StyledNav>
+      <span>
         <Link id="logo" to="/">
           LoLSpy
         </Link>
-      </h1>
+      </span>
       <ul>
         <li>
           <Link id="champion" to="/">
@@ -25,13 +25,17 @@ const Nav = () => {
           </Link>
         </li>
       </ul>
-    </StyledDiv>
+    </StyledNav>
   );
 };
 
-const StyledDiv = styled(motion.div)`
+const StyledNav = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
   min-height: 10vh;
-  background-color: darkgray;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,7 +50,7 @@ const StyledDiv = styled(motion.div)`
   }
   a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
 `;
 

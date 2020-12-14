@@ -11,6 +11,8 @@ const ItemsPage = () => {
   );
 };
 
-const StyledItemPage = styled(motion.div)``;
+const StyledItemPage = styled(motion.div)`
+  padding: 2rem;
+`;
 
 export default ItemsPage;
