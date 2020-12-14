@@ -1,11 +1,15 @@
 import React from "react";
 // Styling & Anim
 
-const Champion = () => {
+const Champion = ({ name }) => {
+  // Get logo URL
+  const getLogo = (name) =>
+    `http://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/${name}.png`;
+
   return (
     <div>
-      <h1>Champion</h1>
-      <h2>Image</h2>
+      <img src={getLogo(name)} alt="" />
+      <p>{name}</p>
     </div>
   );
 };

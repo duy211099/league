@@ -6,6 +6,8 @@ import { loadChampions } from "../actions/championAction";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Champion from "../components/Champion";
+import Aatrox from "../img/img/champion/loading/Aatrox_0.jpg";
+var Diamond = require("../img/img/champion/loading/Aatrox_0.jpg");
 
 function Home() {
   const dispatch = useDispatch();
@@ -16,12 +18,12 @@ function Home() {
   // Get Data
   const { champions } = useSelector((state) => state.champion);
 
-  console.log(typeof champions);
-
   return (
     <ChampionList>
-      <h2>TƯớng</h2>
-      <Champion />
+      <h2>Tướng</h2>
+      {champions.map((champion) => (
+        <Champion name={champion.name} key={champion.id} />
+      ))}
     </ChampionList>
   );
 }
