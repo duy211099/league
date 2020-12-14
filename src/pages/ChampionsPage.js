@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 // Components
 import Champion from "../components/Champion";
 
-function Home() {
+function ChampionsPage() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadChampions());
@@ -39,4 +39,4 @@ const ChampionList = styled(motion.div)`
   padding: 2rem;
 `;
 
-export default Home;
+export default ChampionsPage;
