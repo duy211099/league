@@ -33,6 +33,10 @@ const ChampionDetail = () => {
 
   return (
     <StyledChampionDetail>
+      <Wallpaper />
+      <Lore />
+      <Tips />
+      <Skills />
       <Skins />
     </StyledChampionDetail>
   );
@@ -40,8 +44,6 @@ const ChampionDetail = () => {
 
 const StyledChampionDetail = styled(motion.div)`
   padding: 2rem 0rem;
-  z-index: -100;
-  background-color: darkgray;
   h2 {
     margin: 3rem 0 1rem 0;
     text-align: center;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // Redux
 import { useSelector } from "react-redux";
 // Styled & Anim
@@ -10,8 +10,6 @@ const Skins = () => {
   const { currentChampion } = useSelector((state) => state.champion);
   const { skins, name } = currentChampion;
 
-  console.log(skins);
-
   // Get Passive image
   const getSkin = (id) =>
     `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${name}_${id}.jpg`;
@@ -19,17 +17,33 @@ const Skins = () => {
   const getSplash = (id) =>
     `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_${id}.jpg`;
 
+  // Get image to change Spash
+  const getSkinHandle = (id) => {
+    setSplash(id);
+    console.log(splash);
+  };
+
+  // State
+  const [splash, setSplash] = useState(0);
+
   return (
     <StyledSkins>
       <h2>Trang phục</h2>
-      <Container>
+      <Carousel>
+        <Splash src={getSplash(splash)} />
         <SkinList>
           {skins.map((skin) => (
-            <img src={getSkin(skin.num)} />
+            <Skin onClick={() => getSkinHandle(skin.num)}>
+              <SkinImage>
+                <img src={getSkin(skin.num)} />
+              </SkinImage>
+              <SkinName>
+                <h3>{skin.name === "default" ? "Mặc định" : skin.name}</h3>
+              </SkinName>
+            </Skin>
           ))}
         </SkinList>
-        <p>Ngu</p>
-      </Container>
+      </Carousel>
     </StyledSkins>
   );
 };
@@ -38,24 +52,60 @@ const StyledSkins = styled(motion.div)`
   height: 100vh;
 `;
 
-const Container = styled(motion.div)`
+const Carousel = styled(motion.div)`
+  width: 80%;
   height: 80vh;
-  width: 90%;
-  display: flex;
+  overflow: hidden;
   margin: 0 auto;
-  background: white;
 `;
 
 const Splash = styled(motion.img)`
-  height: 80vh;
-  width: 80%;
   position: absolute;
-  object-fit: cover;
-  z-index: 1;
+  width: 80%;
+  height: 80vh;
+  pointer-events: none;
+  z-index: -1;
 `;
 
-const Skin = styled(motion.img)``;
+const SkinImage = styled(motion.div)`
+  width: 50%;
+  height: 10rem;
+  overflow: hidden;
+  img {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
 
-const SkinList = styled(motion.div)``;
+const SkinName = styled(motion.div)`
+  width: 50%;
+  color: white;
+  margin: auto;
+  h3 {
+    text-align: center;
+    margin: 0rem 0.5rem;
+  }
+`;
+
+const Skin = styled(motion.div)`
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 1rem;
+  background-color: rgba(100, 100, 100, 0.1);
+`;
+
+const SkinList = styled(motion.div)`
+  z-index: 2;
+  width: 30%;
+  overflow: auto;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 export default Skins;

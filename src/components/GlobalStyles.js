@@ -9,6 +9,10 @@ const GlobalStyles = createGlobalStyle`
   }  
   body {
     font-family: "Montserrat", sans-serif;
+  background-color: rgba(0, 0, 0, 0.1);
+  }
+  h3{
+    font-size:1rem;
   }
 `;
 
