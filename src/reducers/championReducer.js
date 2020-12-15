@@ -3,7 +3,14 @@ const initState = {
   currentChampion: {
     allytips: [],
     enemytips: [],
+    skins: [],
     info: [],
+    spells: [],
+    passive: {
+      image: {
+        full: "",
+      },
+    },
   },
 };
 

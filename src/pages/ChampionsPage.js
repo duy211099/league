@@ -6,7 +6,7 @@ import { loadChampions } from "../actions/championAction";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 // Components
-import Champion from "../components/Champion";
+import Champion from "../components/champion/Champion";
 
 function ChampionsPage() {
   const dispatch = useDispatch();
