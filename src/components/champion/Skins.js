@@ -34,7 +34,7 @@ const Skins = () => {
         <SkinList>
           {skins.map((skin) => (
             <Skin onClick={() => getSkinHandle(skin.num)}>
-              <SkinImage>
+              <SkinImage> 
                 <img src={getSkin(skin.num)} />
               </SkinImage>
               <SkinName>
@@ -93,8 +93,9 @@ const Skin = styled(motion.div)`
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  margin: 2rem 1rem;
-  background-color: rgba(100, 100, 100, 0.1);
+  margin: 1rem 1rem;
+  padding: 0.25rem;
+  background-color: rgba(200, 200, 200, 0.1);
 `;
 
 const SkinList = styled(motion.div)`
