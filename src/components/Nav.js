@@ -8,11 +8,11 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <StyledNav>
-      <span>
+      <h1>
         <Link id="logo" to="/">
-          LoLSpy
+          lolspy.
         </Link>
-      </span>
+      </h1>
       <ul>
         <li>
           <Link id="champion" to="/">
@@ -47,10 +47,14 @@ const StyledNav = styled(motion.div)`
   li {
     padding-left: 5rem;
     position: relative;
+    font-size: 1rem;
   }
   a {
     text-decoration: none;
     color: white;
+  }
+  h1 {
+    font-family: "Abril Fatface", cursive;
   }
 `;
 

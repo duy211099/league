@@ -17,7 +17,7 @@ const Champion = ({ name, id }) => {
   return (
     <StyledChampion onClick={loadChampionHandler}>
       <img src={getLogo(id)} alt="" />
-      <p>{name.length > 12 ? name.substring(0, 8) + "..." : name}</p>
+      <p>{name.length > 10 ? name.substring(0, 8) + "..." : name}</p>
     </StyledChampion>
   );
 };
@@ -25,6 +25,9 @@ const Champion = ({ name, id }) => {
 const StyledChampion = styled(motion.div)`
   margin: 0.5rem;
   cursor: pointer;
+  p {
+    text-align: center;
+  }
 `;
 
 export default Champion;

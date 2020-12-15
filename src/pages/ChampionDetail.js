@@ -79,18 +79,30 @@ const ChampionDetail = () => {
 
 const StyledChampionDetail = styled(motion.div)`
   padding: 2rem 0rem;
+  z-index: -100;
+  background-color: darkgray;
+  h2 {
+    margin: 3rem 0 1rem 0;
+    text-align: center;
+  }
+  table,
+  tr,
+  td,
+  th {
+    border: 1px solid black;
+  }
 `;
 
 const BackgroundImg = styled(motion.img)`
-  z-index: -1;
+  pointer-events: none;
   top: 0;
   left: -5%;
   width: 110%;
   height: 120vh;
   position: absolute;
   /* Add the blur effect */
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  filter: blur(8px) brightness(30%);
+  -webkit-filter: blur(8px) brightness(50%);
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -103,6 +115,7 @@ const Slash = styled(motion.img)`
   display: block;
   margin: 0 auto;
   position: relative;
+  filter: brightness(80%);
 `;
 
 const Name = styled(motion.div)`

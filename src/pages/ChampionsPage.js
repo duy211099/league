@@ -34,6 +34,7 @@ function ChampionsPage() {
 
 const StyledHome = styled(motion.div)`
   padding: 2rem;
+  background-color: #5b5b5b;
 `;
 
 const ChampionList = styled(motion.div)`
