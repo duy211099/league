@@ -11,6 +11,13 @@ const initState = {
         full: "",
       },
     },
+    // manually add
+    skills: [
+      {
+        video: "",
+        skill: "",
+      },
+    ],
   },
 };
 

@@ -1,30 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // Redux
 import { useSelector } from "react-redux";
 
 const Skills = () => {
-  // Get skill image
-  const getSpell = (name) =>
-    `http://ddragon.leagueoflegends.com/cdn/10.25.1/img/spell/${name}.png`;
-  // Get Passive image
-  const getPassive = (name) =>
-    `http://ddragon.leagueoflegends.com/cdn/10.25.1/img/passive/${name}`;
-
   // Get Data
   const { currentChampion } = useSelector((state) => state.champion);
-  const { passive, spells } = currentChampion;
+  const { skills } = currentChampion;
 
   return (
     <div>
       <h2>Kỹ năng</h2>
-      <img
-        key={passive.image.full}
-        src={getPassive(passive.image.full)}
-        alt={passive.image.full}
-      />
-      {spells.map((spell) => (
-        <img key={spell} src={getSpell(spell.id)} alt={spell.id} />
-      ))}
+      <div>
+        {skills.map((skill) => (
+          <div>
+            <img key={skill.skill.id} src={skill.image} alt={skill.skill.id} />
+            <video width="320" height="240" muted autoPlay loop>
+              <source src={skill.video} type="video/webm" />
+            </video>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

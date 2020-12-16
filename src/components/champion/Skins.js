@@ -20,7 +20,6 @@ const Skins = () => {
   // Get image to change Spash
   const getSkinHandle = (id) => {
     setSplash(id);
-    console.log(splash);
   };
 
   // State
@@ -34,7 +33,7 @@ const Skins = () => {
         <SkinList>
           {skins.map((skin) => (
             <Skin onClick={() => getSkinHandle(skin.num)}>
-              <SkinImage> 
+              <SkinImage>
                 <img src={getSkin(skin.num)} />
               </SkinImage>
               <SkinName>

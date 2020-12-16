@@ -18,8 +18,6 @@ const ChampionDetail = () => {
   const location = useLocation();
   const championId = location.pathname.split("/")[2];
 
-  console.log(championId);
-
   const dispatch = useDispatch();
   useEffect(() => {
     // Scroll to top
@@ -33,11 +31,11 @@ const ChampionDetail = () => {
 
   return (
     <StyledChampionDetail>
-      <Wallpaper />
+      <Skills />
+      {/* <Wallpaper />
       <Lore />
       <Tips />
-      <Skills />
-      <Skins />
+      <Skins /> */}
     </StyledChampionDetail>
   );
 };
