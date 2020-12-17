@@ -26,16 +26,13 @@ const ChampionDetail = () => {
     dispatch(loadChampion(championId));
   }, [dispatch]);
 
-  // Get Data
-  const { currentChampion } = useSelector((state) => state.champion);
-
   return (
     <StyledChampionDetail>
+      <Wallpaper />
       <Skills />
-      {/* <Wallpaper />
-      <Lore />
+      <Skins />
       <Tips />
-      <Skins /> */}
+      <Lore />
     </StyledChampionDetail>
   );
 };
